@@ -647,8 +647,61 @@ body::before {
   }
 }
 
-/* Responsive Design for Contact Section */
+/* Remove all duplicate media queries and replace with this clean version */
+
+/* Mobile Navigation Styles */
 @media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.98);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    padding: 20px 0;
+    gap: 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu .nav-item {
+    margin: 10px 0;
+  }
+
+  .nav-link {
+    padding: 15px 20px;
+    display: block;
+    border-radius: 10px;
+    margin: 0 20px;
+    font-size: 1.1rem;
+  }
+
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Contact Section Mobile */
   .contact-container {
     padding: 0 15px;
   }
@@ -671,7 +724,7 @@ body::before {
   }
 
   .contact-info h3 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-bottom: 15px;
   }
 
@@ -680,17 +733,25 @@ body::before {
     margin-bottom: 25px;
   }
 
+  /* Contact items mobile styling */
   .contact-item {
-    padding: 15px 12px;
-    margin-bottom: 12px;
-    border-radius: 12px;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
   }
 
   .contact-icon {
     width: 45px;
     height: 45px;
     font-size: 1.8rem;
-    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .contact-text {
+    flex: 1;
+    min-width: 0;
   }
 
   .contact-text h4 {
@@ -700,10 +761,12 @@ body::before {
 
   .contact-text a,
   .contact-text span {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.4;
+    word-break: break-word;
   }
 
+  /* Social media mobile layout */
   .social-media {
     flex-direction: column;
     align-items: center;
@@ -719,6 +782,7 @@ body::before {
     font-size: 0.95rem;
   }
 
+  /* Back button mobile */
   .back-btn {
     padding: 12px 25px;
     font-size: 0.9rem;
@@ -730,234 +794,32 @@ body::before {
   }
 }
 
-/* Standard Mobile (480px and below) */
 @media (max-width: 480px) {
-  .main-content {
-    padding: 20px 10px 15px 10px;
-    margin-top: 60px;
-  }
-
   .contact-section {
     margin: 15px 0;
     padding: 15px 10px;
-    border-radius: 12px;
-  }
-
-  .contact-container {
-    padding: 0 5px;
   }
 
   .contact-info {
     padding: 20px 15px;
-    border-radius: 12px;
   }
 
   .contact-section h2 {
     font-size: 1.8rem;
-    margin-bottom: 20px;
   }
 
   .contact-info h3 {
     font-size: 1.3rem;
-    margin-bottom: 12px;
   }
 
   .contact-info p {
     font-size: 0.95rem;
-    margin-bottom: 20px;
-    line-height: 1.5;
   }
 
+  /* Stack contact items vertically on very small screens */
   .contact-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px 10px;
+    padding: 12px 8px;
     gap: 12px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-  }
-
-  .contact-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 2rem;
-    border-radius: 12px;
-    margin-bottom: 8px;
-  }
-
-  .contact-text {
-    width: 100%;
-  }
-
-  .contact-text h4 {
-    font-size: 1rem;
-    margin-bottom: 6px;
-    text-align: center;
-  }
-
-  .contact-text a,
-  .contact-text span {
-    font-size: 0.9rem;
-    display: block;
-    text-align: center;
-    word-break: break-word;
-    line-height: 1.4;
-  }
-
-  /* Special handling for long LinkedIn URL */
-  .contact-item:nth-child(5) .contact-text a {
-    font-size: 0.8rem;
-    word-break: break-all;
-    line-height: 1.3;
-  }
-
-  .social-media {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-    padding-top: 15px;
-  }
-
-  .social-btn {
-    width: 180px;
-    padding: 10px 18px;
-    font-size: 0.9rem;
-    border-radius: 25px;
-  }
-
-  .social-icon {
-    font-size: 1.2rem;
-  }
-
-  .back-btn {
-    padding: 10px 20px;
-    font-size: 0.85rem;
-    border-radius: 25px;
-  }
-
-  .back-to-home {
-    margin: 20px 0 0 0;
-    padding-top: 15px;
-  }
-}
-
-/* Small Mobile (360px and below) */
-@media (max-width: 360px) {
-  .main-content {
-    padding: 15px 8px 10px 8px;
-    margin-top: 55px;
-  }
-
-  .contact-section {
-    margin: 10px 0;
-    padding: 12px 8px;
-    border-radius: 10px;
-  }
-
-  .contact-info {
-    padding: 15px 12px;
-    border-radius: 10px;
-  }
-
-  .contact-section h2 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-  }
-
-  .contact-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-
-  .contact-info p {
-    font-size: 0.9rem;
-    margin-bottom: 18px;
-  }
-
-  .contact-item {
-    padding: 12px 8px;
-    gap: 10px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-  }
-
-  .contact-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 1.8rem;
-    border-radius: 10px;
-  }
-
-  .contact-text h4 {
-    font-size: 0.95rem;
-    margin-bottom: 5px;
-  }
-
-  .contact-text a,
-  .contact-text span {
-    font-size: 0.85rem;
-    line-height: 1.3;
-  }
-
-  .contact-item:nth-child(5) .contact-text a {
-    font-size: 0.75rem;
-    line-height: 1.2;
-  }
-
-  .social-btn {
-    width: 160px;
-    padding: 9px 15px;
-    font-size: 0.85rem;
-    border-radius: 20px;
-  }
-
-  .social-icon {
-    font-size: 1.1rem;
-  }
-
-  .back-btn {
-    padding: 9px 18px;
-    font-size: 0.8rem;
-    border-radius: 20px;
-  }
-}
-
-/* Extra Small Mobile (320px and below) */
-@media (max-width: 320px) {
-  .main-content {
-    padding: 12px 6px 8px 6px;
-    margin-top: 50px;
-  }
-
-  .contact-section {
-    margin: 8px 0;
-    padding: 10px 6px;
-  }
-
-  .contact-info {
-    padding: 12px 10px;
-  }
-
-  .contact-section h2 {
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-  }
-
-  .contact-info h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-  }
-
-  .contact-info p {
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-  }
-
-  .contact-item {
-    padding: 10px 6px;
-    gap: 8px;
-    margin-bottom: 6px;
   }
 
   .contact-icon {
@@ -967,118 +829,211 @@ body::before {
   }
 
   .contact-text h4 {
-    font-size: 0.9rem;
-    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+
+  .contact-text a,
+  .contact-text span {
+    font-size: 0.85rem;
+  }
+
+  /* Social buttons smaller */
+  .social-btn {
+    font-size: 0.85rem;
+    padding: 10px 15px;
+    width: 180px;
+  }
+
+  .social-icon {
+    font-size: 1.1rem;
+  }
+
+  /* Back button smaller */
+  .back-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+
+  .back-to-home {
+    margin: 20px 0 0 0;
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-section {
+    padding: 10px 5px;
+  }
+
+  .contact-info {
+    padding: 15px 10px;
+  }
+
+  .contact-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-item {
+    padding: 10px 5px;
   }
 
   .contact-text a,
   .contact-text span {
     font-size: 0.8rem;
-    line-height: 1.2;
-  }
-
-  .contact-item:nth-child(5) .contact-text a {
-    font-size: 0.7rem;
-    line-height: 1.1;
   }
 
   .social-btn {
-    width: 140px;
-    padding: 8px 12px;
+    width: 160px;
     font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Ensure main content is properly positioned on mobile */
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: 60px;
+    padding: 15px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    margin-top: 55px;
+    padding: 10px 5px;
+  }
+}
+
+/* Fix long text overflow on mobile */
+@media (max-width: 768px) {
+  .contact-text {
+    overflow: hidden;
   }
 
-  .back-btn {
-    padding: 8px 15px;
+  .contact-text a {
+    word-break: break-all;
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  /* Specifically for the LinkedIn URL */
+  .contact-item:nth-child(5) .contact-text a {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-item:nth-child(5) .contact-text a {
     font-size: 0.75rem;
   }
 }
 
-/* Landscape Mobile Orientation */
-@media (max-height: 500px) and (orientation: landscape) {
-  .contact-section {
-    margin: 10px 0;
-    padding: 15px;
-  }
+/* General section styles for all pages */
+.projects-section,
+.about-section,
+.skills-section,
+.contact-section {
+  margin: 60px 0;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-  .contact-info {
-    padding: 20px;
-  }
+.projects-section h2,
+.about-section h1,
+.skills-section h2,
+.contact-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-  .contact-section h2 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-  }
+/* Fix for navbar logo on all devices */
+.nav-logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-  .contact-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
+/* Ensure hamburger menu works properly */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+}
 
-  .contact-item {
-    padding: 10px;
-    margin-bottom: 8px;
-  }
-
-  .social-media {
-    margin-top: 15px;
-    padding-top: 12px;
-  }
-
-  .back-to-home {
-    margin: 15px 0 0 0;
-    padding-top: 12px;
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
   }
 }
 
-/* ...existing code... */
-
-/* Enhanced Mobile-First Media Queries for Contact Section */
-
-/* Large Mobile/Small Tablet (768px and below) */
+/* Responsive Design for Contact Section - Fixed for Mobile */
 @media (max-width: 768px) {
   .contact-container {
-    padding: 0 15px;
+    padding: 0 10px;
   }
 
   .contact-info {
     padding: 25px 20px;
     margin: 0 auto;
-    border-radius: 15px;
   }
 
   .contact-section {
     margin: 20px 0;
     padding: 20px 15px;
-    border-radius: 15px;
   }
 
   .contact-section h2 {
     font-size: 2rem;
-    margin-bottom: 25px;
   }
 
   .contact-info h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
+    font-size: 1.5rem;
   }
 
-  .contact-info p {
+  .contact_info p {
     font-size: 1rem;
     margin-bottom: 25px;
   }
 
+  /* Contact items mobile styling */
   .contact-item {
-    padding: 15px 12px;
-    margin-bottom: 12px;
-    border-radius: 12px;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
   }
 
   .contact-icon {
     width: 45px;
     height: 45px;
     font-size: 1.8rem;
-    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .contact-text {
+    flex: 1;
+    min-width: 0;
   }
 
   .contact-text h4 {
@@ -1088,10 +1043,12 @@ body::before {
 
   .contact-text a,
   .contact-text span {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.4;
+    word-break: break-word;
   }
 
+  /* Social media mobile layout */
   .social-media {
     flex-direction: column;
     align-items: center;
@@ -1107,6 +1064,7 @@ body::before {
     font-size: 0.95rem;
   }
 
+  /* Back button mobile */
   .back-btn {
     padding: 12px 25px;
     font-size: 0.9rem;
@@ -1118,234 +1076,32 @@ body::before {
   }
 }
 
-/* Standard Mobile (480px and below) */
 @media (max-width: 480px) {
-  .main-content {
-    padding: 20px 10px 15px 10px;
-    margin-top: 60px;
-  }
-
   .contact-section {
     margin: 15px 0;
     padding: 15px 10px;
-    border-radius: 12px;
-  }
-
-  .contact-container {
-    padding: 0 5px;
   }
 
   .contact-info {
     padding: 20px 15px;
-    border-radius: 12px;
   }
 
   .contact-section h2 {
     font-size: 1.8rem;
-    margin-bottom: 20px;
   }
 
   .contact-info h3 {
     font-size: 1.3rem;
-    margin-bottom: 12px;
   }
 
   .contact-info p {
     font-size: 0.95rem;
-    margin-bottom: 20px;
-    line-height: 1.5;
   }
 
+  /* Stack contact items vertically on very small screens */
   .contact-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px 10px;
+    padding: 12px 8px;
     gap: 12px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-  }
-
-  .contact-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 2rem;
-    border-radius: 12px;
-    margin-bottom: 8px;
-  }
-
-  .contact-text {
-    width: 100%;
-  }
-
-  .contact-text h4 {
-    font-size: 1rem;
-    margin-bottom: 6px;
-    text-align: center;
-  }
-
-  .contact-text a,
-  .contact-text span {
-    font-size: 0.9rem;
-    display: block;
-    text-align: center;
-    word-break: break-word;
-    line-height: 1.4;
-  }
-
-  /* Special handling for long LinkedIn URL */
-  .contact-item:nth-child(5) .contact-text a {
-    font-size: 0.8rem;
-    word-break: break-all;
-    line-height: 1.3;
-  }
-
-  .social-media {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-    padding-top: 15px;
-  }
-
-  .social-btn {
-    width: 180px;
-    padding: 10px 18px;
-    font-size: 0.9rem;
-    border-radius: 25px;
-  }
-
-  .social-icon {
-    font-size: 1.2rem;
-  }
-
-  .back-btn {
-    padding: 10px 20px;
-    font-size: 0.85rem;
-    border-radius: 25px;
-  }
-
-  .back-to-home {
-    margin: 20px 0 0 0;
-    padding-top: 15px;
-  }
-}
-
-/* Small Mobile (360px and below) */
-@media (max-width: 360px) {
-  .main-content {
-    padding: 15px 8px 10px 8px;
-    margin-top: 55px;
-  }
-
-  .contact-section {
-    margin: 10px 0;
-    padding: 12px 8px;
-    border-radius: 10px;
-  }
-
-  .contact-info {
-    padding: 15px 12px;
-    border-radius: 10px;
-  }
-
-  .contact-section h2 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-  }
-
-  .contact-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-
-  .contact-info p {
-    font-size: 0.9rem;
-    margin-bottom: 18px;
-  }
-
-  .contact-item {
-    padding: 12px 8px;
-    gap: 10px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-  }
-
-  .contact-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 1.8rem;
-    border-radius: 10px;
-  }
-
-  .contact-text h4 {
-    font-size: 0.95rem;
-    margin-bottom: 5px;
-  }
-
-  .contact-text a,
-  .contact-text span {
-    font-size: 0.85rem;
-    line-height: 1.3;
-  }
-
-  .contact-item:nth-child(5) .contact-text a {
-    font-size: 0.75rem;
-    line-height: 1.2;
-  }
-
-  .social-btn {
-    width: 160px;
-    padding: 9px 15px;
-    font-size: 0.85rem;
-    border-radius: 20px;
-  }
-
-  .social-icon {
-    font-size: 1.1rem;
-  }
-
-  .back-btn {
-    padding: 9px 18px;
-    font-size: 0.8rem;
-    border-radius: 20px;
-  }
-}
-
-/* Extra Small Mobile (320px and below) */
-@media (max-width: 320px) {
-  .main-content {
-    padding: 12px 6px 8px 6px;
-    margin-top: 50px;
-  }
-
-  .contact-section {
-    margin: 8px 0;
-    padding: 10px 6px;
-  }
-
-  .contact-info {
-    padding: 12px 10px;
-  }
-
-  .contact-section h2 {
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-  }
-
-  .contact-info h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-  }
-
-  .contact-info p {
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-  }
-
-  .contact-item {
-    padding: 10px 6px;
-    gap: 8px;
-    margin-bottom: 6px;
   }
 
   .contact-icon {
@@ -1355,118 +1111,211 @@ body::before {
   }
 
   .contact-text h4 {
-    font-size: 0.9rem;
-    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+
+  .contact-text a,
+  .contact-text span {
+    font-size: 0.85rem;
+  }
+
+  /* Social buttons smaller */
+  .social-btn {
+    font-size: 0.85rem;
+    padding: 10px 15px;
+    width: 180px;
+  }
+
+  .social-icon {
+    font-size: 1.1rem;
+  }
+
+  /* Back button smaller */
+  .back-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+
+  .back-to-home {
+    margin: 20px 0 0 0;
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-section {
+    padding: 10px 5px;
+  }
+
+  .contact-info {
+    padding: 15px 10px;
+  }
+
+  .contact-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-item {
+    padding: 10px 5px;
   }
 
   .contact-text a,
   .contact-text span {
     font-size: 0.8rem;
-    line-height: 1.2;
-  }
-
-  .contact-item:nth-child(5) .contact-text a {
-    font-size: 0.7rem;
-    line-height: 1.1;
   }
 
   .social-btn {
-    width: 140px;
-    padding: 8px 12px;
+    width: 160px;
     font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Ensure main content is properly positioned on mobile */
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: 60px;
+    padding: 15px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    margin-top: 55px;
+    padding: 10px 5px;
+  }
+}
+
+/* Fix long text overflow on mobile */
+@media (max-width: 768px) {
+  .contact-text {
+    overflow: hidden;
   }
 
-  .back-btn {
-    padding: 8px 15px;
+  .contact-text a {
+    word-break: break-all;
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  /* Specifically for the LinkedIn URL */
+  .contact-item:nth-child(5) .contact-text a {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-item:nth-child(5) .contact-text a {
     font-size: 0.75rem;
   }
 }
 
-/* Landscape Mobile Orientation */
-@media (max-height: 500px) and (orientation: landscape) {
-  .contact-section {
-    margin: 10px 0;
-    padding: 15px;
-  }
+/* General section styles for all pages */
+.projects-section,
+.about-section,
+.skills-section,
+.contact-section {
+  margin: 60px 0;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-  .contact-info {
-    padding: 20px;
-  }
+.projects-section h2,
+.about-section h1,
+.skills-section h2,
+.contact-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-  .contact-section h2 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-  }
+/* Fix for navbar logo on all devices */
+.nav-logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-  .contact-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
+/* Ensure hamburger menu works properly */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+}
 
-  .contact-item {
-    padding: 10px;
-    margin-bottom: 8px;
-  }
-
-  .social-media {
-    margin-top: 15px;
-    padding-top: 12px;
-  }
-
-  .back-to-home {
-    margin: 15px 0 0 0;
-    padding-top: 12px;
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
   }
 }
 
-/* ...existing code... */
-
-/* Enhanced Mobile-First Media Queries for Contact Section */
-
-/* Large Mobile/Small Tablet (768px and below) */
+/* Responsive Design for Contact Section - Fixed for Mobile */
 @media (max-width: 768px) {
   .contact-container {
-    padding: 0 15px;
+    padding: 0 10px;
   }
 
   .contact-info {
     padding: 25px 20px;
     margin: 0 auto;
-    border-radius: 15px;
   }
 
   .contact-section {
     margin: 20px 0;
     padding: 20px 15px;
-    border-radius: 15px;
   }
 
   .contact-section h2 {
     font-size: 2rem;
-    margin-bottom: 25px;
   }
 
   .contact-info h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
+    font-size: 1.5rem;
   }
 
-  .contact-info p {
+  .contact_info p {
     font-size: 1rem;
     margin-bottom: 25px;
   }
 
+  /* Contact items mobile styling */
   .contact-item {
-    padding: 15px 12px;
-    margin-bottom: 12px;
-    border-radius: 12px;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
   }
 
   .contact-icon {
     width: 45px;
     height: 45px;
     font-size: 1.8rem;
-    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .contact-text {
+    flex: 1;
+    min-width: 0;
   }
 
   .contact-text h4 {
@@ -1476,10 +1325,12 @@ body::before {
 
   .contact-text a,
   .contact-text span {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.4;
+    word-break: break-word;
   }
 
+  /* Social media mobile layout */
   .social-media {
     flex-direction: column;
     align-items: center;
@@ -1495,6 +1346,7 @@ body::before {
     font-size: 0.95rem;
   }
 
+  /* Back button mobile */
   .back-btn {
     padding: 12px 25px;
     font-size: 0.9rem;
@@ -1506,234 +1358,32 @@ body::before {
   }
 }
 
-/* Standard Mobile (480px and below) */
 @media (max-width: 480px) {
-  .main-content {
-    padding: 20px 10px 15px 10px;
-    margin-top: 60px;
-  }
-
   .contact-section {
     margin: 15px 0;
     padding: 15px 10px;
-    border-radius: 12px;
-  }
-
-  .contact-container {
-    padding: 0 5px;
   }
 
   .contact-info {
     padding: 20px 15px;
-    border-radius: 12px;
   }
 
   .contact-section h2 {
     font-size: 1.8rem;
-    margin-bottom: 20px;
   }
 
   .contact-info h3 {
     font-size: 1.3rem;
-    margin-bottom: 12px;
   }
 
   .contact-info p {
     font-size: 0.95rem;
-    margin-bottom: 20px;
-    line-height: 1.5;
   }
 
+  /* Stack contact items vertically on very small screens */
   .contact-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px 10px;
+    padding: 12px 8px;
     gap: 12px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-  }
-
-  .contact-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 2rem;
-    border-radius: 12px;
-    margin-bottom: 8px;
-  }
-
-  .contact-text {
-    width: 100%;
-  }
-
-  .contact-text h4 {
-    font-size: 1rem;
-    margin-bottom: 6px;
-    text-align: center;
-  }
-
-  .contact-text a,
-  .contact-text span {
-    font-size: 0.9rem;
-    display: block;
-    text-align: center;
-    word-break: break-word;
-    line-height: 1.4;
-  }
-
-  /* Special handling for long LinkedIn URL */
-  .contact-item:nth-child(5) .contact-text a {
-    font-size: 0.8rem;
-    word-break: break-all;
-    line-height: 1.3;
-  }
-
-  .social-media {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-    padding-top: 15px;
-  }
-
-  .social-btn {
-    width: 180px;
-    padding: 10px 18px;
-    font-size: 0.9rem;
-    border-radius: 25px;
-  }
-
-  .social-icon {
-    font-size: 1.2rem;
-  }
-
-  .back-btn {
-    padding: 10px 20px;
-    font-size: 0.85rem;
-    border-radius: 25px;
-  }
-
-  .back-to-home {
-    margin: 20px 0 0 0;
-    padding-top: 15px;
-  }
-}
-
-/* Small Mobile (360px and below) */
-@media (max-width: 360px) {
-  .main-content {
-    padding: 15px 8px 10px 8px;
-    margin-top: 55px;
-  }
-
-  .contact-section {
-    margin: 10px 0;
-    padding: 12px 8px;
-    border-radius: 10px;
-  }
-
-  .contact-info {
-    padding: 15px 12px;
-    border-radius: 10px;
-  }
-
-  .contact-section h2 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-  }
-
-  .contact-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-
-  .contact-info p {
-    font-size: 0.9rem;
-    margin-bottom: 18px;
-  }
-
-  .contact-item {
-    padding: 12px 8px;
-    gap: 10px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-  }
-
-  .contact-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 1.8rem;
-    border-radius: 10px;
-  }
-
-  .contact-text h4 {
-    font-size: 0.95rem;
-    margin-bottom: 5px;
-  }
-
-  .contact-text a,
-  .contact-text span {
-    font-size: 0.85rem;
-    line-height: 1.3;
-  }
-
-  .contact-item:nth-child(5) .contact-text a {
-    font-size: 0.75rem;
-    line-height: 1.2;
-  }
-
-  .social-btn {
-    width: 160px;
-    padding: 9px 15px;
-    font-size: 0.85rem;
-    border-radius: 20px;
-  }
-
-  .social-icon {
-    font-size: 1.1rem;
-  }
-
-  .back-btn {
-    padding: 9px 18px;
-    font-size: 0.8rem;
-    border-radius: 20px;
-  }
-}
-
-/* Extra Small Mobile (320px and below) */
-@media (max-width: 320px) {
-  .main-content {
-    padding: 12px 6px 8px 6px;
-    margin-top: 50px;
-  }
-
-  .contact-section {
-    margin: 8px 0;
-    padding: 10px 6px;
-  }
-
-  .contact-info {
-    padding: 12px 10px;
-  }
-
-  .contact-section h2 {
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-  }
-
-  .contact-info h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-  }
-
-  .contact-info p {
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-  }
-
-  .contact-item {
-    padding: 10px 6px;
-    gap: 8px;
-    margin-bottom: 6px;
   }
 
   .contact-icon {
@@ -1743,454 +1393,1728 @@ body::before {
   }
 
   .contact-text h4 {
-    font-size: 0.9rem;
-    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+
+  .contact-text a,
+  .contact-text span {
+    font-size: 0.85rem;
+  }
+
+  /* Social buttons smaller */
+  .social-btn {
+    font-size: 0.85rem;
+    padding: 10px 15px;
+    width: 180px;
+  }
+
+  .social-icon {
+    font-size: 1.1rem;
+  }
+
+  /* Back button smaller */
+  .back-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+
+  .back-to-home {
+    margin: 20px 0 0 0;
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-section {
+    padding: 10px 5px;
+  }
+
+  .contact-info {
+    padding: 15px 10px;
+  }
+
+  .contact-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-item {
+    padding: 10px 5px;
   }
 
   .contact-text a,
   .contact-text span {
     font-size: 0.8rem;
-    line-height: 1.2;
-  }
-
-  .contact-item:nth-child(5) .contact-text a {
-    font-size: 0.7rem;
-    line-height: 1.1;
   }
 
   .social-btn {
-    width: 140px;
-    padding: 8px 12px;
+    width: 160px;
     font-size: 0.8rem;
-  }
-
-  .back-btn {
-    padding: 8px 15px;
-    font-size: 0.75rem;
+    padding: 8px 12px;
   }
 }
 
-/* Landscape Mobile Orientation */
-@media (max-height: 500px) and (orientation: landscape) {
-  .contact-section {
-    margin: 10px 0;
-    padding: 15px;
-  }
-
-  .contact-info {
-    padding: 20px;
-  }
-
-  .contact-section h2 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-  }
-
-  .contact_info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-
-  .contact-item {
-    padding: 10px;
-    margin-bottom: 8px;
-  }
-
-  .social-media {
-    margin-top: 15px;
-    padding-top: 12px;
-  }
-
-  .back-to-home {
-    margin: 15px 0 0 0;
-    padding-top: 12px;
-  }
-}
-
-/* ...existing code... */
-
-/* Enhanced Mobile-First Media Queries for Contact Section */
-
-/* Large Mobile/Small Tablet (768px and below) */
+/* Ensure main content is properly positioned on mobile */
 @media (max-width: 768px) {
-  .contact-container {
-    padding: 0 15px;
-  }
-
-  .contact-info {
-    padding: 25px 20px;
-    margin: 0 auto;
-    border-radius: 15px;
-  }
-
-  .contact-section {
-    margin: 20px 0;
-    padding: 20px 15px;
-    border-radius: 15px;
-  }
-
-  .contact-section h2 {
-    font-size: 2rem;
-    margin-bottom: 25px;
-  }
-
-  .contact-info h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-  }
-
-  .contact-info p {
-    font-size: 1rem;
-    margin-bottom: 25px;
-  }
-
-  .contact-item {
-    padding: 15px 12px;
-    margin-bottom: 12px;
-    border-radius: 12px;
-  }
-
-  .contact-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 1.8rem;
-    border-radius: 10px;
-  }
-
-  .contact-text h4 {
-    font-size: 1rem;
-    margin-bottom: 4px;
-  }
-
-  .contact-text a,
-  .contact-text span {
-    font-size: 0.95rem;
-    line-height: 1.4;
-  }
-
-  .social-media {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin-top: 25px;
-    padding-top: 20px;
-  }
-
-  .social-btn {
-    width: 200px;
-    justify-content: center;
-    padding: 12px 20px;
-    font-size: 0.95rem;
-  }
-
-  .back-btn {
-    padding: 12px 25px;
-    font-size: 0.9rem;
-  }
-
-  .back-to-home {
-    margin: 25px 0 0 0;
-    padding-top: 20px;
+  .main-content {
+    margin-top: 60px;
+    padding: 15px 10px;
   }
 }
 
-/* Standard Mobile (480px and below) */
 @media (max-width: 480px) {
   .main-content {
-    padding: 20px 10px 15px 10px;
-    margin-top: 60px;
-  }
-
-  .contact-section {
-    margin: 15px 0;
-    padding: 15px 10px;
-    border-radius: 12px;
-  }
-
-  .contact-container {
-    padding: 0 5px;
-  }
-
-  .contact-info {
-    padding: 20px 15px;
-    border-radius: 12px;
-  }
-
-  .contact-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-
-  .contact-info h3 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-  }
-
-  .contact-info p {
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-    line-height: 1.5;
-  }
-
-  .contact-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px 10px;
-    gap: 12px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-  }
-
-  .contact-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 2rem;
-    border-radius: 12px;
-    margin-bottom: 8px;
-  }
-
-  .contact-text {
-    width: 100%;
-  }
-
-  .contact-text h4 {
-    font-size: 1rem;
-    margin-bottom: 6px;
-    text-align: center;
-  }
-
-  .contact-text a,
-  .contact-text span {
-    font-size: 0.9rem;
-    display: block;
-    text-align: center;
-    word-break: break-word;
-    line-height: 1.4;
-  }
-
-  /* Special handling for long LinkedIn URL */
-  .contact-item:nth-child(5) .contact-text a {
-    font-size: 0.8rem;
-    word-break: break-all;
-    line-height: 1.3;
-  }
-
-  .social-media {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-    padding-top: 15px;
-  }
-
-  .social-btn {
-    width: 180px;
-    padding: 10px 18px;
-    font-size: 0.9rem;
-    border-radius: 25px;
-  }
-
-  .social-icon {
-    font-size: 1.2rem;
-  }
-
-  .back-btn {
-    padding: 10px 20px;
-    font-size: 0.85rem;
-    border-radius: 25px;
-  }
-
-  .back-to-home {
-    margin: 20px 0 0 0;
-    padding-top: 15px;
-  }
-}
-
-/* Small Mobile (360px and below) */
-@media (max-width: 360px) {
-  .main-content {
-    padding: 15px 8px 10px 8px;
     margin-top: 55px;
-  }
-
-  .contact-section {
-    margin: 10px 0;
-    padding: 12px 8px;
-    border-radius: 10px;
-  }
-
-  .contact-info {
-    padding: 15px 12px;
-    border-radius: 10px;
-  }
-
-  .contact-section h2 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-  }
-
-  .contact_info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-
-  .contact-info p {
-    font-size: 0.9rem;
-    margin-bottom: 18px;
-  }
-
-  .contact-item {
-    padding: 12px 8px;
-    gap: 10px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-  }
-
-  .contact-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 1.8rem;
-    border-radius: 10px;
-  }
-
-  .contact-text h4 {
-    font-size: 0.95rem;
-    margin-bottom: 5px;
-  }
-
-  .contact-text a,
-  .contact-text span {
-    font-size: 0.85rem;
-    line-height: 1.3;
-  }
-
-  .contact-item:nth-child(5) .contact-text a {
-    font-size: 0.75rem;
-    line-height: 1.2;
-  }
-
-  .social-btn {
-    width: 160px;
-    padding: 9px 15px;
-    font-size: 0.85rem;
-    border-radius: 20px;
-  }
-
-  .social-icon {
-    font-size: 1.1rem;
-  }
-
-  .back-btn {
-    padding: 9px 18px;
-    font-size: 0.8rem;
-    border-radius: 20px;
+    padding: 10px 5px;
   }
 }
 
-/* Extra Small Mobile (320px and below) */
-@media (max-width: 320px) {
-  .main-content {
-    padding: 12px 6px 8px 6px;
-    margin-top: 50px;
+/* Fix long text overflow on mobile */
+@media (max-width: 768px) {
+  .contact-text {
+    overflow: hidden;
   }
 
-  .contact-section {
-    margin: 8px 0;
-    padding: 10px 6px;
+  .contact-text a {
+    word-break: break-all;
+    display: inline-block;
+    max-width: 100%;
   }
 
-  .contact-info {
-    padding: 12px 10px;
-  }
-
-  .contact-section h2 {
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-  }
-
-  .contact-info h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-  }
-
-  .contact-info p {
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-  }
-
-  .contact-item {
-    padding: 10px 6px;
-    gap: 8px;
-    margin-bottom: 6px;
-  }
-
-  .contact-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1.6rem;
-  }
-
-  .contact-text h4 {
-    font-size: 0.9rem;
-    margin-bottom: 4px;
-  }
-
-  .contact-text a,
-  .contact-text span {
-    font-size: 0.8rem;
-    line-height: 1.2;
-  }
-
+  /* Specifically for the LinkedIn URL */
   .contact-item:nth-child(5) .contact-text a {
-    font-size: 0.7rem;
-    line-height: 1.1;
-  }
-
-  .social-btn {
-    width: 140px;
-    padding: 8px 12px;
     font-size: 0.8rem;
   }
+}
 
-  .back-btn {
-    padding: 8px 15px;
+@media (max-width: 480px) {
+  .contact-item:nth-child(5) .contact-text a {
     font-size: 0.75rem;
   }
 }
 
-/* Landscape Mobile Orientation */
-@media (max-height: 500px) and (orientation: landscape) {
-  .contact-section {
-    margin: 10px 0;
-    padding: 15px;
-  }
+/* About Section Styles */
+.about-section {
+  margin: 60px 0;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-  .contact-info {
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.about-subtitle {
+  font-size: 1.3rem;
+  color: #666;
+  font-weight: 300;
+}
+
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Profile Card */
+.about-intro {
+  margin-bottom: 50px;
+}
+
+.profile-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-image-large {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.profile-image-large:hover {
+  transform: scale(1.05);
+}
+
+.profile-image-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info h2 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.role {
+  font-size: 1.3rem;
+  color: #667eea;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.quick-stats {
+  display: flex;
+  gap: 30px;
+}
+
+.stat {
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  flex: 1;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* About Story */
+.about-story {
+  margin-bottom: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.about-story h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 25px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.about-story p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Experience Section */
+.experience-section {
+  margin-bottom: 50px;
+}
+
+.experience-section h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  margin-left: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -45px;
+  top: 30px;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+
+.timeline-content h4 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.company {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.duration {
+  color: #999;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.timeline-content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Education Section */
+.education-section {
+  margin-bottom: 50px;
+}
+
+.education-section h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.education-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(102, 126, 234, 0.15);
+}
+
+.education-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.education-card h4 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.institution {
+  color: #667eea;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.year {
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.education-card .description {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Interests Section */
+.interests-section {
+  margin-bottom: 50px;
+}
+
+.interests-section h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.interest-item {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.interest-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1);
+}
+
+.interest-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.interest-item h4 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.interest-item p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Values Section */
+.values-section {
+  margin-bottom: 30px;
+}
+
+.values-section h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.value-card {
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(118, 75, 162, 0.1)
+  );
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+}
+
+.value-card h4 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 15px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.value-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Animation for About Section */
+.about-content > div {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.about-intro {
+  animation-delay: 0.1s;
+}
+.about-story {
+  animation-delay: 0.2s;
+}
+.experience-section {
+  animation-delay: 0.3s;
+}
+.education-section {
+  animation-delay: 0.4s;
+}
+.interests-section {
+  animation-delay: 0.5s;
+}
+.values-section {
+  animation-delay: 0.6s;
+}
+
+/* Responsive Design for About Section */
+@media (max-width: 768px) {
+  .about-section {
+    margin: 30px 0;
     padding: 20px;
   }
 
-  .contact-section h2 {
+  .about-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .profile-image-large {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .profile-info h2 {
+    font-size: 1.8rem;
+  }
+
+  .role {
+    font-size: 1.1rem;
+  }
+
+  .quick-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .timeline-item {
+    margin-left: 20px;
+    padding: 20px;
+  }
+
+  .timeline-dot {
+    left: -35px;
+  }
+
+  .education-grid,
+  .interests-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-story,
+  .timeline-item,
+  .education-card,
+  .interest-item,
+  .value-card {
+    padding: 20px;
+  }
+
+  .about-story h3,
+  .experience-section h3,
+  .education-section h3,
+  .interests-section h3,
+  .values-section h3 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1rem;
+  }
+
+  .profile-info h2 {
     font-size: 1.6rem;
-    margin-bottom: 15px;
   }
 
-  .contact_info h3 {
+  .role {
+    font-size: 1rem;
+  }
+
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline {
+    padding-left: 15px;
+  }
+
+  .timeline-item {
+    margin-left: 15px;
+    padding: 15px;
+  }
+
+  .timeline-dot {
+    left: -30px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .education-card,
+  .interest-item,
+  .value-card {
+    padding: 18px;
+  }
+
+  .about-story h3,
+  .experience-section h3,
+  .education-section h3,
+  .interests-section h3,
+  .values-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-story p {
+    font-size: 1rem;
+  }
+}
+
+/* Back to Home Button for About Page */
+.about-section + .back-to-home {
+  text-align: center;
+  margin: 40px 0 0 0;
+  padding-top: 30px;
+  border-top: 2px solid rgba(102, 126, 234, 0.1);
+}
+
+/* Skills Section Styles - Complete Implementation */
+.skills-section {
+  margin: 60px 0;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.skills-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.skills-intro {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Technical Skills */
+.technical-skills {
+  margin-bottom: 60px;
+}
+
+.skills-category {
+  margin-bottom: 40px;
+}
+
+.skills-category h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+  position: relative;
+}
+
+.skills-category h3::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 1px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(102, 126, 234, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.skill-card:hover::before {
+  left: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
+  border-color: rgba(102, 126, 234, 0.2);
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.skill-info h4 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.skill-level {
+  font-size: 0.9rem;
+  color: #667eea;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.skill-progress {
+  width: 100%;
+  height: 8px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 10px;
+  transition: width 2s ease-in-out;
+  position: relative;
+}
+
+.progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.skill-description {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Soft Skills */
+.soft-skills {
+  margin-bottom: 50px;
+}
+
+.soft-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.soft-skill-item {
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(118, 75, 162, 0.1)
+  );
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.soft-skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(102, 126, 234, 0.15);
+}
+
+.soft-skill-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #667eea;
+}
+
+.soft-skill-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.soft-skill-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Certifications Section */
+.certifications-section {
+  margin-bottom: 40px;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.certification-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
+}
+
+.cert-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.cert-badge {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 50%;
+  color: white;
+}
+
+.cert-info h4 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.cert-issuer {
+  font-size: 0.9rem;
+  color: #667eea;
+  font-weight: 500;
+}
+
+.cert-date {
+  font-size: 0.85rem;
+  color: #999;
+  margin-top: 10px;
+}
+
+/* Skills Animation */
+.skills-section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.skill-card,
+.language-item,
+.soft-skill-item,
+.certification-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.skill-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.skill-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.skill-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.skill-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Responsive Design for Skills Section */
+@media (max-width: 768px) {
+  .skills-section {
+    margin: 30px 0;
+    padding: 20px;
+  }
+
+  .skills-section h2 {
+    font-size: 2rem;
+  }
+
+  .skills-intro {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .skill-card {
+    padding: 20px;
+  }
+
+  .skill-header {
+    gap: 12px;
+  }
+
+  .skill-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+
+  .skill-info h4 {
     font-size: 1.2rem;
-    margin-bottom: 10px;
   }
 
-  .contact-item {
+  .soft-skills-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .skills-category h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .skills-intro {
+    font-size: 0.95rem;
+  }
+
+  .skill-card {
+    padding: 18px;
+  }
+
+  .skill-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.8rem;
+  }
+
+  .skill-info h4 {
+    font-size: 1.1rem;
+  }
+
+  .soft-skill-item {
+    padding: 20px;
+  }
+
+  .certification-card {
+    padding: 20px;
+  }
+
+  .skills-category h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Back to Home Button for Skills Page */
+.skills-section + .back-to-home {
+  text-align: center;
+  margin: 40px 0 0 0;
+  padding-top: 30px;
+  border-top: 2px solid rgba(102, 126, 234, 0.1);
+}
+
+/* Projects Section Styles */
+.projects-section {
+  margin: 60px 0;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.projects-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.projects-intro {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Enhanced Projects Grid Styles */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 35px;
+  margin-top: 50px;
+  padding: 20px 0;
+}
+
+/* Ensure all project cards have equal height */
+.project-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure all cards have equal height */
+}
+
+.project-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(102, 126, 234, 0.25);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+/* Project image container */
+.project-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.15);
+}
+
+/* Project overlay */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.9),
+    rgba(118, 75, 162, 0.9)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(5px);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+/* Project content */
+.project-content {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-content h3 {
+  font-size: 1.6rem;
+  color: #333;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.3;
+}
+
+.project-content p {
+  color: #666;
+  line-height: 1.7;
+  margin: 0 0 20px 0;
+  font-size: 1rem;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Tech stack styling */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tech-tag {
+  display: inline-block;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+.tech-tag:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Project links */
+.project-links {
+  display: flex;
+  gap: 20px;
+}
+
+.project-links .btn-demo,
+.project-links .btn-repo {
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-demo {
+  background: white;
+  color: #667eea;
+  border: 2px solid white;
+}
+
+.btn-demo:hover {
+  background: transparent;
+  color: white;
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.btn-repo {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-repo:hover {
+  background: white;
+  color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Individual Project Card Styles */
+.project-card:nth-child(1) {
+  background: linear-gradient(
+    135deg,
+    rgba(52, 152, 219, 0.05),
+    rgba(255, 255, 255, 0.95)
+  );
+  border: 2px solid rgba(52, 152, 219, 0.1);
+}
+
+.project-card:nth-child(1):hover {
+  border-color: rgba(52, 152, 219, 0.3);
+}
+
+.project-card:nth-child(2) {
+  background: linear-gradient(
+    135deg,
+    rgba(46, 204, 113, 0.05),
+    rgba(255, 255, 255, 0.95)
+  );
+  border: 2px solid rgba(46, 204, 113, 0.1);
+}
+
+.project-card:nth-child(2):hover {
+  border-color: rgba(46, 204, 113, 0.3);
+}
+
+.project-card:nth-child(3) {
+  background: linear-gradient(
+    135deg,
+    rgba(155, 89, 182, 0.05),
+    rgba(255, 255, 255, 0.95)
+  );
+  border: 2px solid rgba(155, 89, 182, 0.1);
+}
+
+.project-card:nth-child(3):hover {
+  border-color: rgba(155, 89, 182, 0.3);
+}
+
+.project-card:nth-child(4) {
+  background: linear-gradient(
+    135deg,
+    rgba(241, 196, 15, 0.05),
+    rgba(255, 255, 255, 0.95)
+  );
+  border: 2px solid rgba(241, 196, 15, 0.1);
+}
+
+.project-card:nth-child(4):hover {
+  border-color: rgba(241, 196, 15, 0.3);
+}
+
+.project-card:nth-child(5) {
+  background: linear-gradient(
+    135deg,
+    rgba(231, 76, 60, 0.05),
+    rgba(255, 255, 255, 0.95)
+  );
+  border: 2px solid rgba(231, 76, 60, 0.1);
+}
+
+.project-card:nth-child(5):hover {
+  border-color: rgba(231, 76, 60, 0.3);
+}
+
+.project-card:nth-child(6) {
+  background: linear-gradient(
+    135deg,
+    rgba(230, 126, 34, 0.05),
+    rgba(255, 255, 255, 0.95)
+  );
+  border: 2px solid rgba(230, 126, 34, 0.1);
+}
+
+.project-card:nth-child(6):hover {
+  border-color: rgba(230, 126, 34, 0.3);
+}
+
+.project-card:nth-child(7) {
+  background: linear-gradient(
+    135deg,
+    rgba(52, 73, 94, 0.05),
+    rgba(255, 255, 255, 0.95)
+  );
+  border: 2px solid rgba(52, 73, 94, 0.1);
+}
+
+.project-card:nth-child(7):hover {
+  border-color: rgba(52, 73, 94, 0.3);
+}
+
+.project-card:nth-child(8) {
+  background: linear-gradient(
+    135deg,
+    rgba(220, 38, 38, 0.05),
+    rgba(255, 255, 255, 0.95)
+  );
+  border: 2px solid rgba(220, 38, 38, 0.1);
+}
+
+.project-card:nth-child(8):hover {
+  border-color: rgba(220, 38, 38, 0.3);
+}
+
+/* Grid animations */
+.project-card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: projectFadeIn 0.8s ease forwards;
+}
+
+.project-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.project-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.project-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.project-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.project-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.project-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.project-card:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.project-card:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+@keyframes projectFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Project Features List */
+.project-features {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.project-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-features li {
+  padding: 5px 0;
+  color: #666;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Tesla Clone Project Specific Styles */
+.project-card:nth-child(8) .project-content h3 {
+  background: linear-gradient(45deg, #dc2626, #991b1b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.project-card:nth-child(8) .tech-tag {
+  background: linear-gradient(45deg, #dc2626, #991b1b);
+}
+
+.project-card:nth-child(8) .btn-demo {
+  background: #dc2626;
+  color: white;
+  border: 2px solid #dc2626;
+}
+
+.project-card:nth-child(8) .btn-demo:hover {
+  background: #991b1b;
+  border-color: #991b1b;
+}
+
+.project-card:nth-child(8) .btn-repo {
+  color: #dc2626;
+  border: 2px solid #dc2626;
+}
+
+.project-card:nth-child(8) .btn-repo:hover {
+  background: #dc2626;
+  color: white;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    margin: 30px 0;
+    padding: 20px;
+  }
+
+  .projects-section h2 {
+    font-size: 2rem;
+  }
+
+  .projects-intro {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 30px;
     padding: 10px;
-    margin-bottom: 8px;
   }
 
-  .social-media {
-    margin-top: 15px;
-    padding-top: 12px;
+  .project-card {
+    margin: 0 auto;
+    max-width: 500px;
   }
 
-  .back-to-home {
-    margin: 15px 0 0 0;
-    padding-top: 12px;
+  .project-image {
+    height: 200px;
   }
+
+  .project-content {
+    padding: 25px;
+  }
+
+  .project-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .project-overlay .project-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 15px;
+  }
+
+  .projects-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .projects-intro {
+    font-size: 0.95rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 5px;
+  }
+
+  .project-content {
+    padding: 20px;
+  }
+
+  .project-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-content p {
+    font-size: 0.95rem;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+
+  .project-links .btn-demo,
+  .project-links .btn-repo {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Grid layout variations for larger screens */
+@media (min-width: 1400px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .projects-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 45px;
+  }
+}
+
+/* Back to Home Button for Projects Page */
+.projects-section + .back-to-home {
+  text-align: center;
+  margin: 40px 0 0 0;
+  padding-top: 30px;
+  border-top: 2px solid rgba(102, 126, 234, 0.1);
+}
+
+/* Special hover effects for project cards */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.project-card:hover::before {
+  left: 100%;
+}
+
+/* Project loading animation */
+.projects-section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Improved accessibility */
+.project-card:focus-within {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+.btn-demo:focus,
+.btn-repo:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
 }
