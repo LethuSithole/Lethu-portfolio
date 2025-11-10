@@ -4,33 +4,78 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Lethukuthula Sithole - Software Developer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>Lethukuthula Sithole - Full Stack Web Developer</title>
   </head>
   <body>
+    <!-- Animated Background Elements -->
+    <div class="bg-animation">
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+      </div>
+    </div>
+
     <div class="welcome-container">
       <div class="welcome-content">
         <div class="profile-section">
           <div class="profile-image">
+            <div class="profile-ring"></div>
             <img src="/assets/fbk pp.jpg" alt="Lethukuthula Sithole" />
+            <div class="profile-glow"></div>
           </div>
-          <h1 class="name">Lethukuthula Sithole</h1>
-          <h2 class="title">Software Developer</h2>
+          <h1 class="name">
+            <span class="name-first">Lethukuthula</span>
+            <span class="name-last">Sithole</span>
+          </h1>
+          <h2 class="title">
+            <span class="title-icon">💻</span>
+            Full Stack Web Developer
+            <span class="title-icon">🚀</span>
+          </h2>
           <p class="description">
             Passionate about creating innovative solutions through code.
             Specializing in web development, mobile apps, and modern
             technologies.
           </p>
+          <div class="tech-stack">
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">JavaScript</span>
+          </div>
         </div>
 
         <div class="cta-section">
-          <a href="main.html" class="cta-button primary">Explore My Work</a>
-          <a href="contact.html" class="cta-button secondary">Get In Touch</a>
+          <a href="main.html" class="cta-button primary">
+            <span>Explore My Work</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="contact.html" class="cta-button secondary">
+            <span>Get In Touch</span>
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
 
         <div class="social-links">
-          <a href="#" class="social-link">GitHub</a>
-          <a href="#" class="social-link">LinkedIn</a>
-          <a href="#" class="social-link">Twitter</a>
+          <a href="#" class="social-link" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+            <span>Twitter</span>
+          </a>
         </div>
       </div>
 
@@ -39,6 +84,11 @@
         <div class="arrow">↓</div>
       </div>
     </div>
+
+    <button class="skip-credits" id="skipCredits">
+      <i class="fas fa-forward"></i> Skip Intro
+    </button>
+
     <script src="script.js"></script>
   </body>
 </html>

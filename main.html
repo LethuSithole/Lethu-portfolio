@@ -4,29 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <title>Lethu's Portfolio - Main</title>
   </head>
   <body>
+    <!-- Particles Background -->
+    <div class="particles-container" id="particles"></div>
+
     <nav class="navbar">
       <div class="nav-container">
         <div class="nav-logo">
-          <a href="index.html">Lethu Portfolio</a>
+          <a href="index.html">
+            <i class="fas fa-code"></i>
+            Lethu Portfolio
+          </a>
         </div>
         <ul class="nav-menu">
           <li class="nav-item">
-            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html" class="nav-link">
+              <i class="fas fa-home"></i> Home
+            </a>
           </li>
           <li class="nav-item">
-            <a href="about.html" class="nav-link">About</a>
+            <a href="about.html" class="nav-link">
+              <i class="fas fa-user"></i> About
+            </a>
           </li>
           <li class="nav-item">
-            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="projects.html" class="nav-link">
+              <i class="fas fa-folder-open"></i> Projects
+            </a>
           </li>
           <li class="nav-item">
-            <a href="skills.html" class="nav-link">Skills</a>
+            <a href="skills.html" class="nav-link">
+              <i class="fas fa-tools"></i> Skills
+            </a>
           </li>
           <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="contact.html" class="nav-link">
+              <i class="fas fa-envelope"></i> Contact
+            </a>
           </li>
         </ul>
         <div class="hamburger">
@@ -39,14 +59,90 @@
 
     <div class="main-content">
       <div class="hero-section">
-        <h1>Welcome to My Portfolio</h1>
-        <p>
-          I'm Lethukuthula Sithole, a passionate software developer creating
-          innovative solutions through code.
-        </p>
-        <div class="hero-buttons">
-          <a href="projects.html" class="btn-primary">View My Work</a>
-          <a href="contact.html" class="btn-secondary">Get In Touch</a>
+        <div class="hero-decoration">
+          <div class="decoration-circle circle-1"></div>
+          <div class="decoration-circle circle-2"></div>
+        </div>
+
+        <div class="hero-content-wrapper">
+          <div class="welcome-badge">
+            <i class="fas fa-sparkles"></i> Welcome
+          </div>
+
+          <h1 class="typing-text" data-text="Welcome to My Portfolio"></h1>
+          <p
+            class="typing-subtext"
+            data-text="I'm Lethukuthula Sithole, a passionate software developer creating innovative solutions through code."
+          ></p>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <i class="fas fa-project-diagram"></i>
+              <div class="stat-content">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-code"></i>
+              <div class="stat-content">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Languages</span>
+              </div>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-trophy"></i>
+              <div class="stat-content">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Awards</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="projects.html" class="btn-primary">
+              <span>View My Work</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="contact.html" class="btn-secondary">
+              <span>Get In Touch</span>
+              <i class="fas fa-paper-plane"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Section -->
+      <div class="featured-section">
+        <div class="section-header">
+          <h2>What I Do Best</h2>
+          <p>Creating digital experiences that matter</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Web Development</h3>
+            <p>Building responsive and modern web applications</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Mobile Apps</h3>
+            <p>Creating intuitive mobile experiences</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>Designing beautiful user interfaces</p>
+          </div>
         </div>
       </div>
     </div>
