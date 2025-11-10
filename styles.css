@@ -102,7 +102,8 @@ body::before {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
     opacity: 0.3;
   }
@@ -165,7 +166,8 @@ body::before {
 }
 
 @keyframes profilePulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -206,7 +208,7 @@ body::before {
   inset: 0;
   border-radius: 50%;
   box-shadow: 0 0 60px rgba(255, 255, 255, 0.4),
-              0 0 100px rgba(102, 126, 234, 0.3);
+    0 0 100px rgba(102, 126, 234, 0.3);
   animation: glow 2s ease-in-out infinite alternate;
   z-index: -2;
 }
@@ -214,11 +216,11 @@ body::before {
 @keyframes glow {
   from {
     box-shadow: 0 0 40px rgba(255, 255, 255, 0.3),
-                0 0 80px rgba(102, 126, 234, 0.2);
+      0 0 80px rgba(102, 126, 234, 0.2);
   }
   to {
     box-shadow: 0 0 60px rgba(255, 255, 255, 0.5),
-                0 0 120px rgba(102, 126, 234, 0.4);
+      0 0 120px rgba(102, 126, 234, 0.4);
   }
 }
 
@@ -376,13 +378,18 @@ body::before {
 }
 
 .cta-button.primary::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -649,7 +656,11 @@ body::before {
 .decoration-circle {
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(118, 75, 162, 0.1)
+  );
 }
 
 .circle-1 {
@@ -784,7 +795,11 @@ body::before {
   align-items: center;
   gap: 15px;
   padding: 20px 30px;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(118, 75, 162, 0.1)
+  );
   border-radius: 20px;
   border: 2px solid rgba(102, 126, 234, 0.2);
   transition: all 0.3s ease;
@@ -862,13 +877,18 @@ body::before {
 }
 
 .btn-primary::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -1241,110 +1261,268 @@ body::before {
     padding: 12px 20px;
     font-size: 1rem;
   }
-  
+
   /* Home Page Mobile Styles */
-  .name {
-    font-size: 2.5rem;
+  .welcome-container {
+    padding: 15px;
+    min-height: 100vh;
   }
-  
-  .title {
-    font-size: 1.3rem;
-    letter-spacing: 2px;
-  }
-  
-  .description {
-    font-size: 1rem;
+
+  .welcome-content {
+    max-width: 100%;
     padding: 0 10px;
   }
-  
-  .tech-stack {
-    gap: 8px;
+
+  .name {
+    font-size: 2rem;
+    line-height: 1.2;
   }
-  
-  .tech-badge {
-    font-size: 0.85rem;
-    padding: 6px 15px;
+
+  .name-first,
+  .name-last {
+    font-size: 2rem;
   }
-  
-  .profile-image {
-    width: 140px;
-    height: 140px;
+
+  .title {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    flex-wrap: wrap;
   }
-  
-  .cta-button {
-    padding: 14px 28px;
+
+  .title-icon {
     font-size: 1rem;
   }
-  
-  .social-links {
-    flex-direction: column;
-    gap: 15px;
-    padding: 0 20px;
+
+  .description {
+    font-size: 0.95rem;
+    padding: 0 15px;
+    line-height: 1.6;
   }
-  
-  .social-link {
+
+  .tech-stack {
+    gap: 6px;
+    padding: 0 10px;
+  }
+
+  .tech-badge {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+  }
+
+  .profile-ring {
+    inset: -6px;
+  }
+
+  .cta-section {
+    margin: 40px 0;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 0.95rem;
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    max-width: 280px;
     justify-content: center;
   }
-  
+
+  .social-links {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 20px;
+    margin-top: 30px;
+  }
+
+  .social-link {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .scroll-indicator {
+    bottom: 15px;
+    font-size: 0.85rem;
+  }
+
+  .arrow {
+    font-size: 1.2rem;
+  }
+
   /* Main Page Mobile Styles */
+  .main-content {
+    padding: 20px 15px;
+    margin-top: 75px;
+  }
+
   .hero-section {
-    padding: 60px 20px;
-    margin-bottom: 40px;
+    padding: 40px 15px;
+    margin-bottom: 30px;
+    border-radius: 20px;
   }
-  
+
+  .welcome-badge {
+    font-size: 0.85rem;
+    padding: 6px 15px;
+    margin-bottom: 20px;
+  }
+
   .hero-section h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 15px;
   }
-  
+
   .hero-section p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
   }
-  
+
   .hero-stats {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
+    padding: 20px 0;
+    margin: 30px 0;
   }
-  
+
   .stat-item {
-    padding: 15px 25px;
+    padding: 15px 20px;
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    max-width: 100%;
+    gap: 12px;
   }
-  
-  .stat-number {
+
+  .stat-item i {
     font-size: 1.5rem;
   }
-  
+
+  .stat-number {
+    font-size: 1.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 25px;
+    font-size: 0.95rem;
+    justify-content: center;
+  }
+
   .circle-1,
   .circle-2 {
     display: none;
   }
-  
+
   .featured-section {
-    padding: 40px 20px;
+    padding: 30px 15px;
+    border-radius: 20px;
+    margin-top: 30px;
   }
-  
+
+  .section-header {
+    margin-bottom: 30px;
+  }
+
   .section-header h2 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+  }
+
+  .features-grid {
+    gap: 15px;
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: 25px 20px;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+
+  .feature-icon i {
+    font-size: 1.5rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+
+  .skip-credits {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .skip-credits i {
+    font-size: 0.9rem;
+  }
+
+  /* Projects Page Mobile */
+  .projects-section h2 {
     font-size: 2rem;
   }
-  
-  .features-grid {
+
+  .projects-intro {
+    font-size: 0.95rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
-  
-  .feature-card {
-    padding: 30px 20px;
+
+  .project-card {
+    border-radius: 15px;
   }
-  
-  .skip-credits {
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
+
+  .project-content {
+    padding: 20px 15px;
+  }
+
+  .project-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-content p {
     font-size: 0.9rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
   }
 
   .hamburger {
@@ -2399,6 +2577,242 @@ body::before {
   }
 }
 
+/* Ultra-Small Mobile Optimization (360px and below) - All Pages */
+@media (max-width: 360px) {
+  /* Home Page Ultra-Compact */
+  .name,
+  .name-first,
+  .name-last {
+    font-size: 1.7rem !important;
+  }
+
+  .title {
+    font-size: 0.95rem !important;
+    letter-spacing: 0.5px;
+  }
+
+  .description {
+    font-size: 0.85rem !important;
+  }
+
+  .tech-badge {
+    font-size: 0.7rem !important;
+    padding: 5px 10px;
+  }
+
+  .profile-image {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .cta-button,
+  .social-link {
+    font-size: 0.85rem !important;
+    padding: 10px 18px !important;
+    max-width: 240px !important;
+  }
+
+  /* Main/Welcome Page Ultra-Compact */
+  .hero-section {
+    padding: 30px 10px !important;
+  }
+
+  .hero-section h1 {
+    font-size: 1.5rem !important;
+  }
+
+  .hero-section p {
+    font-size: 0.85rem !important;
+  }
+
+  .welcome-badge {
+    font-size: 0.75rem !important;
+    padding: 5px 12px !important;
+  }
+
+  .stat-item {
+    padding: 12px 15px !important;
+    gap: 10px;
+  }
+
+  .stat-number {
+    font-size: 1.1rem !important;
+  }
+
+  .stat-label {
+    font-size: 0.75rem !important;
+  }
+
+  .stat-item i {
+    font-size: 1.3rem !important;
+  }
+
+  /* Featured Section Ultra-Compact */
+  .featured-section {
+    padding: 40px 15px !important;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem !important;
+  }
+
+  .feature-card {
+    padding: 25px 20px !important;
+  }
+
+  .feature-icon {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .feature-icon i {
+    font-size: 1.5rem !important;
+  }
+
+  .feature-card h3 {
+    font-size: 1.1rem !important;
+  }
+
+  .feature-card p {
+    font-size: 0.85rem !important;
+  }
+
+  /* Projects Page Ultra-Compact */
+  .projects-section {
+    padding: 15px 10px !important;
+  }
+
+  .projects-section h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .projects-intro {
+    font-size: 0.85rem !important;
+  }
+
+  .project-content {
+    padding: 18px !important;
+  }
+
+  .project-content h3 {
+    font-size: 1.1rem !important;
+  }
+
+  .project-content p {
+    font-size: 0.85rem !important;
+  }
+
+  .tech-tag {
+    font-size: 0.7rem !important;
+    padding: 4px 8px !important;
+  }
+
+  .project-links .btn-repo {
+    padding: 8px 16px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* About Page Ultra-Compact */
+  .about-section {
+    padding: 30px 10px !important;
+  }
+
+  .about-header h1 {
+    font-size: 1.7rem !important;
+  }
+
+  .about-subtitle {
+    font-size: 0.85rem !important;
+  }
+
+  .profile-info h2 {
+    font-size: 1.4rem !important;
+  }
+
+  .role {
+    font-size: 0.85rem !important;
+  }
+
+  .about-story,
+  .timeline-item,
+  .education-card,
+  .interest-item,
+  .value-card {
+    padding: 15px !important;
+  }
+
+  .about-story h3,
+  .experience-section h3,
+  .education-section h3,
+  .interests-section h3,
+  .values-section h3 {
+    font-size: 1.4rem !important;
+  }
+
+  .timeline-dot {
+    width: 8px !important;
+    height: 8px !important;
+  }
+
+  /* Skills Page Ultra-Compact */
+  .skills-section {
+    padding: 30px 10px !important;
+  }
+
+  .skills-section h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .languages-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .language-item {
+    padding: 12px !important;
+  }
+
+  .language-icon {
+    font-size: 2rem !important;
+  }
+
+  .language-name {
+    font-size: 0.9rem !important;
+  }
+
+  .language-percentage {
+    font-size: 0.8rem !important;
+  }
+
+  .language-proficiency {
+    font-size: 0.65rem !important;
+    padding: 2px 6px !important;
+  }
+
+  /* Navigation Ultra-Compact */
+  .nav-logo a {
+    font-size: 1.2rem !important;
+  }
+
+  .nav-link {
+    font-size: 0.9rem !important;
+    padding: 10px 15px !important;
+  }
+
+  /* Button Ultra-Compact */
+  .btn,
+  .btn-primary,
+  .btn-secondary {
+    font-size: 0.8rem !important;
+    padding: 10px 16px !important;
+  }
+
+  .back-btn {
+    font-size: 0.8rem !important;
+    padding: 8px 16px !important;
+  }
+}
+
 /* Grid layout variations for larger screens */
 @media (min-width: 1400px) {
   .projects-grid {
@@ -3311,6 +3725,9 @@ body::before {
   color: #666;
   line-height: 1.6;
 }
+
+/* About Page Mobile Styles */
+@media (max-width: 768px) {
   .interests-grid,
   .values-grid {
     grid-template-columns: 1fr;
@@ -3529,7 +3946,8 @@ body::before {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.8;
   }
